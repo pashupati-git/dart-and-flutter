@@ -1,0 +1,57 @@
+****************************oop and classes*********************************
+
+****oop constructor abstraction encapsulation inheritance polymorphism******
+
+
+class Bank{
+
+  final bankName = 'SomeBank';
+  final bankAddress = 'new road';                             
+  int balance = 9000;
+
+  void deposit(int money){
+    balance = balance + money;
+  }
+}
+
+void main (){
+  final bank1=Bank();
+  bank1.deposit(1000);
+  print(bank1.balance);
+  print(bank1.bankName);
+
+}
+
+output:-
+10000
+SomeBank
+_______________________________________________________
+
+***using constructor***
+
+class Bank{
+
+  final String bankName;
+  final String bankAddress;
+  Bank({required this.bankName,required this.bankAddress});
+
+  int balance=900;
+
+  void deposit(int money){
+    balance = balance + money;
+  }
+}
+
+void main (){
+  final bank1=Bank(bankName:'Nibl',bankAddress:'newRoad');
+  final bank2=Bank(bankName:'global',bankAddress:'bhaktapur');
+  bank1.deposit(1000);
+  print(bank1.bankName);
+  print(bank2.bankName);
+
+}
+
+output=
+Nibl
+global
+_________________________________________________________________________________

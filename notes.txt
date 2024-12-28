@@ -1,0 +1,1114 @@
+// single line comment
+// main function...  this is the entry point
+
+/*
+ multine line comment
+ sad;ks;ldksad
+ l;sakdl;d
+ */
+
+void main (){   
+}
+_________________________________________________________
+
+void main (){ 
+  // String ,int,double, List, Set, boolean ,Map  
+  
+  String person = 'Ram hari'; 
+}
+________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String personName = 'Ram hari';
+  
+  print(personName); 
+}
+_________________________________________________________
+
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map           
+  String personName = 'nhvnb';
+   
+  //print(personName.isEmpty);
+  print(personName.isNotEmpty);  
+}
+__________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String personName = 'ram';
+   
+  //print(personName.isEmpty);
+  //print(personName.isNotEmpty);
+  
+//   print(personName.length);
+//   print(personName.runtimeType);
+//   print(personName.toUpperCase());
+  //print(personName.toLowerCase());
+  
+ // print(personName.contains('ir'));
+  // print(personName.trim().length);
+  
+}
+_______________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String personName = 'ram';  
+  
+  String imageFileName = 'screenshot.png';  
+    print(imageFileName.split('.').last);
+  
+}
+______________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String sentence = 'he is bad boy';  
+  
+  print(sentence.replaceAll('bad', 'good'));  
+}
+______________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String sentence = 'hebakadjasas';
+    
+  //print(sentence.replaceAll('bad', 'good'));
+  
+  print(sentence.substring(0, 4));  
+}
+________________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+ 
+  String firstName = 'ram';
+  String lastName  = 'sharma';
+  int age = 90;
+    
+  //String interpolation
+  print('$firstName $lastName $age');  
+}
+________________________________________________________________
+
+void main() {
+  // String ,int,double, List, Set, boolean ,Map
+  
+  String firstName = 'ram';
+  String lastName  = 'sharma';
+  int age = 90;
+    
+  //String interpolation
+  print('${firstName.toUpperCase()} $lastName ${age + 90}');
+  
+}
+_________________________________________________________________
+
+Exercise: String interpolation
+
+Given the following variables:
+
+double temperature = 20;
+int value = 2;
+String pizza = 'pizza';
+String pasta = 'pasta';
+
+Write a program that produces this output by using all of them:
+
+The temperature is 20C
+2 plus 2 makes 4
+I like pizza and pasta
+
+The output should update correctly if we change the values of the variables.
+
+For example, if value is 3, the program should print:
+
+3 plus 3 makes 6
+
+______________
+
+void main() {  
+double temperature = 20;
+int value = 2;
+String pizza = 'pizza';
+String pasta = 'pasta';
+  
+print('The temperature is $temperature c $value plus 2 make 4  i like $pizza and $pasta');  
+}
+____________________________________________________________________________________________
+
+void main() {
+  
+  String personName = 'ram'; 
+  int age  = 90;  
+  print('${personName.toUpperCase()} asmdbb jhb $age');
+ 
+}
+________________________________________________________________
+
+void main() {
+  
+  String personName = 'ram';
+  
+  int age  = 90;
+  int amount = 9;
+    
+  print('sjdaslkdjksaldkldsada\n'
+         'salkdjaslkdjslakdjldkjas'
+       );  
+}
+________________________________________________________________
+
+void main() {  
+  int age = 9;
+  
+  double rate = 9.97;
+    
+  print(rate.toString().runtimeType);
+    
+}
+________________________________________________________________
+
+void main() {  
+  int age = 9;
+  
+  double rate = 9.57;  
+  print(rate.ceil());
+   print(rate.floor());
+  print(rate.round());  
+}
+_______________________________________________________________
+
+int age = 9;
+  
+  double rate = 9.570877857;
+   
+  print(rate.toInt());
+  
+  print(age.isEven); 
+  print(rate.toStringAsFixed(2));
+
+void main() {
+  String perAmount = '9.99';  
+  print(double.parse(perAmount) * 3);  
+}
+_______________________________________________________________
+
+
+void main() {
+  String productPrice = '900';
+  
+  String discount = '150'; 
+}
+calculate price of 10 products with discount
+___________________________________________________________
+
+
+void main() {
+  String productPrice = '900';
+  
+  String discount = '150';
+  
+  
+  int proC = int.parse(productPrice);
+  
+  int disC = int.parse(discount);
+    
+  int total = proC * 10 - disC;
+  
+  
+  print((900 * 1)/100);  
+}
+_______________________________________________
+
+void main() {
+  int a = 90;
+  int b = 200;
+
+  bool isLogin = true;
+
+  print(a + b);
+  print(a - b);
+  print(a * b);
+  print(a / b);
+  print(b % a);
+  print(b ~/ a);
+
+//   print(a>b);
+//   print(a<b);
+//   print(a>=b);
+//   print(a<=b);
+//   print(a==b);
+//   print(a!=b);
+}
+_______________________________________________________________
+
+Quiz: String escaping
+
+Can you guess what's the output of the following code, without running it?
+
+void main() {
+  int a = 10;
+  print('$a');
+  print('\$a');
+  print('\$$a');  
+}
+__________________________________________________________________
+
+Quiz: Increment and decrement
+
+What values will be printed if we run this program?
+
+void main() {
+  int x = 1;
+  int y = x++;
+  int z = --y;
+  print('x: $x, y: $y, z: $z');
+}
+_____________________________________________________________________
+
+void main() {
+  int a = 90;
+
+  String some = a > 50 ? 'milyo' : 'milena';
+
+  print(some);
+}
+_____________________________________________________________________
+
+void main(
+  int a = 40;
+
+  String some = a > 50 ? 'milyo' : a<50 ? 'ho':  'milena';
+
+  print(some);
+}
+____________________________________________________________________
+
+void main() {
+  
+  int a = 40;
+  
+//Terninary operator
+  String some = a > 50 ? 'milyo' : a<50 ? 'ho':  'milena';
+  print(some);
+  
+  print(a> 50 || a==40 || a<50 );    
+}
+___________________________________________________________________
+
+void main() {
+  
+  int a = 40;
+  
+//Terninary operator
+  String some = a > 50 ? 'milyo' : a<50 ? 'ho':  'milena';
+  print(some);
+  
+  print(a> 50 || a==40 || a<50 );
+  
+   print(a> 50 && a==40 && a<50 );  
+}
+____________________________________________________________________
+
+void main() {
+  int salary = 90000;
+  int expenses = 40000;
+  String some = 'sello';
+
+  if (salary > expenses) {
+    
+    print('You have saved $some  ${salary - expenses} this month');
+    
+  } else if (expenses > salary) {
+    
+    print('You have lost ${expenses - salary} this month');
+  } else {
+    
+    print('Your balance hasn\'t changed');
+  }
+}
+______________________________________________________________________
+
+void main() {  
+ int i = 0;
+  
+//   i++;
+  
+  int a = ++i;
+  
+  print(a);
+  
+  
+//  int i = 0;
+  
+//   while(i< 20){
+//     i++;
+//   }
+  
+}
+__________________________________________________________________________
+
+void main() { 
+ int i = 0;
+  
+  while(i< 20){
+    i++;
+        
+    print('$i run');
+  }
+  
+}
+_________________________________________________________
+
+void main() { 
+ int i = 0;
+  
+  while(i< 20){
+    i++;
+    
+    if(i % 2 == 0){
+       print('$i even');
+    }else{
+       print('$i odd');
+    }
+       
+  }
+  
+}
+______________________________________________________________
+
+void main() {  
+ int i = 0;
+  
+  do{
+    print('hello world');
+    i++;
+    print(i);
+  }while(i<20);
+  
+    
+  
+//   while(i< 20){
+//     i++;
+    
+//     if(i % 2 == 0){
+//        print('$i even');
+//     }else{
+//        print('$i odd');
+//     }
+       
+//   }
+  
+}
+_____________________________________________________________
+
+
+void main() {
+for(int i=1;i<=15;i++){
+  if(i%3==0 && i%5==0){
+    print('fizz buss');
+  }else if(i%3==0){
+    print('fizz');
+  }else if(i%5==0){
+    print('buzz');
+  }else{
+    print(i);
+  }
+}
+
+________
+
+void main() {
+  
+  int a = 9000;
+  
+  String ni = 'sio'; 
+  
+  final age = ni.toUpperCase();  
+  print(age);
+    
+  const rating = 9000;  
+}
+_____________________________________________
+
+**List
+
+
+void main() {
+  List<int> numbers = [11, 22,33,15, 99];    
+  for(int n in numbers){
+    print(n);
+  }  
+}
+__________________________________________
+
+void main() { 
+List<int> numbers = [11,22,33,44, 55,66]; 
+ 
+  numbers.add('lio');
+//  numbers.addAll([]);
+  
+ // print(numbers[0]);
+  
+  print(numbers); 
+}
+____________________________________________
+
+void main() {
+List<int> numbers = [11,22,33,44, 55,66]; 
+  
+  //numbers.add(90);
+//   numbers.addAll([9, 0, 77]);
+  
+ // numbers.insert(1, 7);
+  
+ // numbers.remove(55);
+  
+  numbers.removeAt(5);
+  
+ // print(numbers[0]);
+  
+  print(numbers);  
+}
+______________________________________________
+
+void main() {  
+List<int> numbers = [11,22,33,44, 55,66]; 
+  
+  //numbers.add(90);
+//   numbers.addAll([9, 0, 77]);
+  
+ // numbers.insert(1, 7);
+  
+ // numbers.remove(55);
+  
+ // numbers.removeAt(5);
+  
+ // print(numbers[0]);
+  
+  
+  print(numbers.reversed.toList());  
+}
+_______________________________________________
+
+void main() {
+ 
+  List<int> numbers = [11,22,33,44,55, 55,66]; 
+//   numbers = [];
+   //numbers.add(90);
+//   numbers.addAll([9, 0, 77]);
+  
+ // numbers.insert(1, 7);
+  
+ // numbers.remove(55);
+  
+ // numbers.removeAt(5);
+  
+ // print(numbers[0]);
+  
+  //numbers.clear();
+  //print(numbers.isNotEmpty);
+  
+  print(numbers.toSet().toList());
+//   print(numbers.reversed.toList());  
+}
+_________________________________________________________
+
+
+void main() {
+ List<int> numbers=[11,22,33,44,55,66];
+  numbers.add(90);
+  numbers.remove(22);
+  numbers.addAll([1,2,3,4]);
+  numbers.insert(1,90);
+  numbers.removeAt(5);
+  print(numbers);
+}
+______________________________________________________
+
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+  int sum = 0; // Variable to store the total sum
+  
+  for (int n in numbers) {
+    sum += n; // Add each number to the sum
+  }
+  
+  print("The total sum is: $sum"); // Print the result
+}
+
+_____________________________________________________________
+
+
+***fold forEach map reduce where firstWhere fold
+
+void main() {
+ 
+  List<int> numbers = [11,22,33,44,55, 66]; 
+//   numbers = [];
+ 
+  
+  for(int n in numbers){
+      print(n);
+  }
+  //numbers.add(90);
+//   numbers.addAll([9, 0, 77]);
+  
+ // numbers.insert(1, 7);
+  
+ // numbers.remove(55);
+  
+ // numbers.removeAt(5);
+  
+ // print(numbers[0]);
+  
+  //numbers.clear();
+  //print(numbers.isNotEmpty);
+  
+  print(numbers.toSet().toList());
+//   print(numbers.reversed.toList()); 
+}
+__________
+
+
+* forEach()
+
+void main() {
+  int sum=0;
+  final numbers=[11,33,44,55,66,77];
+  numbers.forEach((a){
+    if(a%2==0){
+      sum+=a;
+    }
+  });
+  
+  print(sum);  
+}
+
+________
+
+*map
+void main() {
+ final numbers=[11,33,44,55,66,77];
+  final newQ=numbers.map((a[5]){
+    return {
+      if(a==77){
+        a=a+23;
+      }
+    };
+  }).toList();
+  print(newQ);
+}
+____________
+
+*where
+void main() {
+ final numbers=[11,33,44,55,66,77];
+  final newQ=numbers.where((a){
+    return a>50;
+  }).toList();
+    
+    
+  print(newQ);
+}
+_____________
+
+*firstWhere
+
+1.
+void main() {
+ final numbers=[11,33,44,55,66,77];
+  final newQ=numbers.firstWhere((a){
+    return a==11;
+  });
+    
+    
+  print(newQ);
+}
+____________
+2.
+void main() {
+ final numbers=[11,33,44,55,66,77];
+  final newQ=numbers.firstWhere((a){
+    return a==100;
+  },orElse:(){
+    return 0;
+  });
+    
+    
+  print(newQ);
+}
+
+_________________________________________
+
+
+void main() {
+ final numbers=[11,33,44,55,66,77];
+  final g=numbers.reduce((a,b){   
+    return a+b;
+  });
+  
+  print(g);
+__________________________________
+
+
+void main() {
+ final numbers=[11,33,44,100,66,77];
+  final g=numbers.reduce((a,b){   
+    return a>b?a:b;
+  });
+  
+  print(g);
+}
+
+output=100
+___________________________________
+
+void main() {
+ final numbers=[11,99,9,44];
+  final g=numbers.fold(0,(a,b){ 
+    print(a);
+    return a+b;
+  });
+  
+  print(g);
+}
+
+output:-
+0
+11
+110
+119
+163
+
+______________________________________________________
+
+void main() {
+  //spread operator (...)
+final numbers=[11,22,33,44];
+  final newNumbers=[...numbers,90];
+  print(newNumbers);
+}
+__________________________________
+
+void main() { 
+ int a = 90;   
+ final numbers = [
+   11, 
+   22,
+   44,
+   if(a < 10) 99 else 900,
+   55
+ ];
+  
+  if(a > 10){
+    numbers.add(99);
+  }
+  print(numbers);
+}
+____________________________________
+
+
+void main() {
+ 
+  final colors = ['red', 'green', 'blue', 'teal'];  
+  final numbers = [1,2,3,4];  
+  
+//   for(String n in colors){
+//     print(n);
+//   }  
+  final someList = [
+//     for(final n in colors) n,
+    for(final a in numbers) if(a %2==0) a
+  ];
+  
+  print(someList);
+}
+________________________________________________________
+
+void main() {
+ List asdf=['l','o','p'];
+  final n=asdf.add(90);
+  final m=asdf.join();
+  print(m);
+}
+___________________________________________________________
+
+
+
+***map function started:-
+
+void main() {
+   
+final person = {
+  'age': 90,
+  'username': 'rabin',
+  'habits': ['sing', 'dance']
+};
+  person['age'] = 900; 
+  print(person.keys);
+   print(person.values);  
+  print(person['age']);
+  
+  
+//   final bank ={
+//       'address':'mirchaiya',
+//        'account': 98988,
+//       'amount': 9839848,
+//       'array':['name','branch']
+//     };
+//     print(bank.entries); 
+}
+_____________________________________________
+
+
+void main() { 
+final person = {
+  'age': 90,
+  'username': 'rabin',
+  'habits': ['sing', 'dance']
+};  
+ person.addAll({'m': 90});  
+  person.addEntries([MapEntry('l', 9), MapEntry('k', 90)]);  
+  print(person); 
+}
+___________________________________________
+
+
+void main() {
+ 
+  int a = 90;
+  
+final person = {
+  'age': 90,
+  'username': 'rabin',
+  'habits': ['sing', 'dance'],
+  if(a > 20) 'l': 'p'
+}; 
+ person.addAll({'m': 90}); 
+  person.addEntries([MapEntry('l', 9), MapEntry('k', 90)]);  
+  print(person); 
+}
+______________________________________________________
+
+void main() {
+int a = 90; 
+final person = {
+  'age': 90,
+  'username': 'rabin',
+  'habits': ['sing', 'dance'],
+  if(a > 20) 'l': '$a'
+};  
+  person.update('ag', (e){
+      return 900;
+  },ifAbsent: (){
+    return 9;
+  });
+  
+  //person.remove('age');
+//   person.clear();
+//  person.addAll({'m': 90}); 
+//   person.addEntries([MapEntry('l', 9), MapEntry('k', 90)]);  
+  print(person);  
+}
+_____________________________________________________________
+
+void main() {
+int a = 90;
+final person = {
+  'age': 90,
+  'username': 'rabin',
+  'habits': ['sing', 'dance'],
+  if(a > 20) 'l': '$a'
+}; 
+  person.update('ag', (e){
+      return 900;
+  },ifAbsent: (){
+   return ('your key name is not matched');
+  });   
+  print(person);  
+}
+____________________________________________________________
+
+void main() {  
+ const pizzaPrices = {
+  'margherita': 5.5,
+  'pepperoni': 7.5,
+  'vegetarian': 6.5,
+};
+____________________________________________________________  
+  
+  const order = ['margherita', 'pepperoni', 'cheese'];
+  
+  double total = 0;
+  
+  for(final o in order){
+    if(pizzaPrices[o] == null){
+      print('$o is not available');
+    }else{
+      total = total  + pizzaPrices[o]!;
+    }
+  }  
+  print('your total is $total');  
+}
+void main() {  
+  const order1 = ['margherita', 'pineaplle'];
+  totalPizza(order1);
+
+}
+_____________________________________________________________
+
+void totalPizza (List orders){    
+ const pizzaPrices = {
+  'margherita': 5.5,
+  'pepperoni': 7.5,
+  'vegetarian': 6.5,
+}; 
+    double total = 0;
+  
+  for(final o in orders){
+    if(pizzaPrices[o] == null){
+      print('$o is not available');
+    }else{
+      total = total  + pizzaPrices[o]!;
+    }
+  } 
+   print('your total is $total'); 
+}
+____________________________________________
+
+void main() {
+  
+//   final numbers = [11,22,33,44,55];
+//    print(numbers);
+  
+  final mp = {
+    'nums': [33,44,55,77,99]
+  };
+  
+  print(mp['nums']);
+
+ final restaurants = [
+    {
+      'name': 'Pizza Mario',
+      'cuisine': 'Italian',
+      'ratings': [4.0, 3.5, 4.5],
+    },
+    {
+      'name': 'Chez Anne',
+      'cuisine': 'French',
+      'ratings': [5.0, 4.5, 4.0],
+    },
+    {
+      'name': 'Navaratna',
+      'cuisine': 'Indian',
+      'ratings': [4.0, 4.5, 4.0],
+    },
+  ];
+  
+  print(restaurants[0]['ratings']); 
+}
+__________________________________________________-
+
+void main() {
+  
+//   final numbers = [11,22,33,44,55];
+//    print(numbers);
+  
+  final mp = {
+    'nums': [33,44,55,77,99]
+  };
+  
+  print(mp['nums']);
+
+ final restaurants = [
+    {
+      'name': 'Pizza Mario',
+      'cuisine': 'Italian',
+      'ratings': [4.0, 3.5, 4.5],
+    },
+    {
+      'name': 'Chez Anne',
+      'cuisine': 'French',
+      'ratings': [5.0, 4.5, 4.0],
+    },
+    {
+      'name': 'Navaratna',
+      'cuisine': 'Indian',
+      'ratings': [4.0, 4.5, 4.0],
+    },
+  ];
+  
+  final ratings = restaurants[0]['ratings'] as List;
+  
+  print(ratings.length);  
+}
+_______________________________________________________
+
+void main() { 
+List numbers = [11,22,44, 11];
+  Set data= {11, 22,44,11};
+  
+  Map<String, dynamic> m = {
+    'l': 90
+  };
+    
+  m.addAll({'l':900});
+  
+  print(m);  
+}
+_______________________________________________________
+
+void main() {
+  
+List numbers = [11,22,44, 11];
+  Set data= {11, 22,44,11};  
+  print(numbers.toSet().toList());  
+}
+________________________________________________________
+
+void main() {
+  Set data= {'nepal', 'china', 'india', 'bangladesh'};
+  
+  Set data1= {'usa', 'uk', 'china', 'russia'};
+  
+  print(data.intersection(data1));
+  
+   print(data.union(data1));   
+}
+__________________________________________________________
+
+void main() { 
+  List<int> numbers = [11,22,44,55,66]; 
+  Map<String, dynamic> person = {
+    'name': 'jios',
+    'age': 90    
+  }; 
+  print((person['name'] as String));  
+}
+__________________________________________________________
+
+void main() {
+ 
+List msdnam = ['l', 'o', 'p'];
+  
+msdnam.add(90);  
+ final m =  msdnam.join();  
+}
+__________________________________________________________
+
+void main() {  
+greet();
+  
+  final g = some();
+  print(g);  
+}
+
+void greet(){
+  print('hello jee');
+}
+
+String some(){
+  return 'hello jee how are you';
+}
+
+void main() {
+  greet('ram', 90);  
+   greet('shyam', 900); 
+}
+
+void greet(String username, int age){
+  print('hello jee $username');
+}
+____________________________________________________________
+
+void main() {
+final a=first();
+  final b=second();
+  print(a+' '+b);  
+ final sum= add(1,2);
+  print(sum);
+}
+
+String first(){
+  return 'good';
+}
+String second(){
+  return 'morning';
+}
+
+int add(int x,int y){
+  return x+y;
+}
+
+____________________________________________
+
+void main() { 
+  greet(isLogin: true, age: 90, username: 'sakdjaskdl');
+  
+}
+
+void greet({required String username, required int age, required bool isLogin}){
+  print('hello jee $username $age');
+}
+_________________________________________________________________________________________--
+
+void main() { 
+  greet(isLogin: true, age: 90, username: 'sakdjaskdl');
+
+   logEvenNumber([33,44,55,66,11,10,7,100]);
+  
+}
+
+void logEvenNumber(List<int> numbers){
+  for(final n in numbers){
+    if(n %2==0){
+    print('even $n');
+  }
+  } 
+}
+
+void greet({required String username, required int age, required bool isLogin}){
+  print('hello jee $username $age');
+}
+
+___________________________________________________________________________________
+
+void main() {
+  
+  int a = 10;
+  int b = 20;
+
+  int greater = findGreater(a, b);
+  print("The greater number is: $greater"); 
+}
+int findGreater(int num1, int num2) {
+  
+  return (num1 > num2) ? num1 : num2;
+}
+
+__________________________________________________________________________________
+Imp websites for learning :
+https://www.javatpoint.com/dart-function
+
+
+
+
+https://freedium.cfd/https://medium.com/@yurinovicow/flutter-what-is-clean-architecture-and
+-why-you-should-never-use-it-2a544fa4ed96 
+
+___________________________________________________________________________________________________
+
+                                   **********advance topic in next file****************
+
+
