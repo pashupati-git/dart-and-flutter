@@ -55,3 +55,319 @@ output=
 Nibl
 global
 _________________________________________________________________________________
+
+//oop abstraction 
+
+abstract class IAuth{
+   
+}  
+
+class Bank{
+  final String bankName;
+  final String bankAddress;
+   
+  Bank({required this.bankName, required this.bankAddress});
+  int balance = 9000;
+
+  void deposit(int money){
+     balance = balance + money;
+  }
+}
+
+void main (){  
+  final bank1 = Bank(bankName: 'Nibl', bankAddress: 'newRoad');
+  final bank2 = Bank(bankName: 'Prabhu', bankAddress: 'ktm'); 
+}
+__________________________________________________________________________
+
+2 files is in work
+
+*First File:-
+
+abstract class IAuth{
+  String loginUser(String email, String password);
+}
+
+class  S {
+  final IAuth auth;
+  S(this.auth);
+
+  void loginUser(String email, String password) {
+     auth.loginUser(email, password);
+  }
+}
+__________
+
+*Second File:-
+import 'i_auth.dart';
+
+class AuthService implements IAuth {
+
+  @override
+  String loginUser(String email, String password) {
+     return  'hello user';
+  }
+}
+_______________________________________________________________
+
+class  Bank{
+
+  int _balance = 0;
+  void deposit (int amount){
+    _balance = _balance + amount;
+  }
+
+  // Setter
+  set depo(int newValue) {
+     _balance = newValue;
+  }
+
+ // getter
+  int get showBalance {
+    return _balance;
+  }
+}
+____________________
+
+abstract class IAuth{
+  String loginUser(String email, String password);
+}
+// abstract class B {
+//   int a (){
+//     return 90;
+//   }
+//
+// }
+
+class  S {
+  final IAuth auth;
+  S(this.auth);
+  void loginUser(String email, String password) {
+     auth.loginUser(email, password);
+  }
+
+
+}
+________________________________________________________________
+
+*** implements
+
+import 'package:fluttermangsir/bank.dart';
+
+void main (){
+  final bank = Bank();
+  // bank.depo = 9000;
+  print(bank.showBalance);
+}
+__________________________________________________________
+
+class  Animal {
+  
+  final String animal = 'something'; 
+  void sleep (){
+    print('animal is sleeping');
+  } 
+}
+
+class A extends Animal{ 
+}
+
+void main (){
+  
+  final a = A();
+  a.sleep();
+  print(a.animal);
+}
+____________________________________________________________
+
+class  Animal {
+  final String animal = 'something';
+  void sleep (){
+    print('animal is sleeping');
+  } 
+}
+
+class Dog { 
+  void eating(){
+    print('eating'); 
+  }  
+}
+
+class Cat {
+  void eating(){
+    print('eating');
+  }
+}
+
+class B {
+  void some (){
+    print('hello jee');
+  }
+}
+
+class A extends Animal  {
+}
+
+void main (){
+  final a = A();
+  a.sleep();
+  print(a.animal);
+}
+_________________________________________________________________
+
+class  Animal {
+  final String animal = 'something';
+  void sleep (){
+    print('animal is sleeping');
+  }
+}
+
+mixin Eating {
+  void eating(){
+    print('eating');
+  }
+}
+
+class Dog  extends Animal with Eating {
+}
+
+class Cat with Eating{
+
+}
+
+void main (){
+  final dog = Dog();
+  dog.eating();
+  final person = 'hello jee';
+  print(person.substring(0, 20));
+}
+_______________________________________________________________
+
+***4 files are in work:-
+
+import 'package:fluttermangsir/bike.dart';
+import 'package:fluttermangsir/car.dart';
+
+void main (){
+  final c = Car();
+  c.breakPress();
+  final b = Bike();  
+  b.breakPress();
+}
+____________
+
+abstract class Vehicle{
+
+  void horn(){
+    print('horning play');
+  }
+  void breakPress(){
+    print('break Press');
+}
+}
+____________
+
+import 'package:fluttermangsir/vehicle.dart';
+
+class Bike extends Vehicle{
+
+}
+____________
+
+import 'package:fluttermangsir/vehicle.dart';
+
+class Car extends Vehicle {
+
+}
+________________________________________________________________________
+
+import 'package:flutter/material.dart';
+class  A {
+ void eating (){
+    print('eating');
+  }
+}
+
+class B extends A{
+  @override
+  void eating() {
+    print('I am meeting');
+    // // TODO: implement eating
+    super.eating();
+  }
+}
+
+
+void main (){
+final b = B();
+b.eating();
+}
+
+class Home extends StatelessWidget { 
+  const Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.red
+        ),
+        onPressed: (){}, child: Text('sd;;lks'));
+  }
+}
+_____________________________________________________________________
+
+class  A {
+
+final String personName;
+A({required this.personName});
+
+}
+
+class B extends A{
+  final String per;
+  B({required super.personName, required this.per});
+  
+}
+
+void main (){
+final b = B(personName: 'skldjaskld', per: 'sdalksa;ldk');
+final a = A(personName: 's;adl;sdl');
+}
+______________________________________________________________________
+
+class Restaurant {
+  const Restaurant({
+    required this.name,
+    required this.cuisine,
+    required this.ratings,
+  });
+  final String name;
+  final String cuisine;
+  final List<double> ratings;
+}
+_______________________________________________________________________
+
+Exercise: Restaurant ratings with classes
+
+Given the following class:
+
+class Restaurant {
+  const Restaurant({
+    required this.name,
+    required this.cuisine,
+    required this.ratings,
+  });
+  final String name;
+  final String cuisine;
+  final List<double> ratings;
+}
+
+Add some new functionality to this class so that it can be used to:
+
+    get the total number of ratings
+    calculate the average rating (use a for loop or the reduce operator)
+
+Create new getter variables or methods depending on what you feel is most appropriate.
+
+NOTE: Use Dartpad with Null Safety to complete this exercise.
+___________________________________________________________________________________

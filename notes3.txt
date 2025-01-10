@@ -1,0 +1,520 @@
+                                 *see project 'first app''*
+
+
+***************now development with flutter started********************
+
+stl=ststeless widget                          stfl=stateful widget
+
+
+import 'package:flutter/material.dart';
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('hello flutter'),
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+        actions: [
+          Icon(Icons.access_alarms_sharp)
+        ],
+      ),
+      //backgroundColor: Colors.blue,
+    );
+  }
+}
+_____________________________________________________________________
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('hello flutter'),
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+        actions: [
+          Icon(CupertinoIcons.bell_fill)
+        ],
+      ),
+      //backgroundColor: Colors.blue,
+      body: Text('lkhklhklhkl'),
+
+    );
+  }
+}
+
+_____if extra files are made we have to import in main.dart(MaterialApp should be used only ones)
+
+import 'package:first_app/pages/home_page.dart';
+import'package:flutter/material.dart';
+void main(){
+  runApp(Main());
+}
+
+class Main extends StatelessWidget {
+  const Main({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      //theme:ThemeData(),
+      home: HomePage(),
+
+    );
+  }
+}
+
+______________________________________________________________________________
+
+***********app bar code****************************
+
+import 'package:first_app/constants/app_colors.dart';
+import'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+
+      appBar:AppBar(
+          title: Text('All Books',
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          backgroundColor: Colors.red,
+          foregroundColor:Colors.white,
+          centerTitle: true,
+          leading:Icon(Icons.account_balance_rounded, color:Colors.cyanAccent),
+
+          actions:[
+            IconButton(onPressed: (){
+            print('hello jee');
+            }, icon: Icon(Icons.search)),
+            IconButton(onPressed: (){
+              print('hello jee');
+            }, icon: Icon(Icons.notifications)),
+          ],
+        ),
+    );
+  }
+}
+____________________________________________________________________________________
+
+************body started************************
+
+1. margin padding 
+body:Container(
+        margin: EdgeInsets.only(left:20),
+        height:200,
+        width:200,
+        color:Colors.green,
+        child: Text('Hello,  world',style:TextStyle(color:Colors.white),),
+
+      ) 
+(.only,all,symmetric,zero)
+___________________________________________________________
+2. row, column, overflow of widgets
+
+****overflow(Wrap,ListView)**********
+
+
+********for column********
+
+*ListView class helps to make column/row scrollable (replacing Column by ListView)
+*if overflow there are 2 methods (SingleChildScrollView, ListView).
+
+*if overflow making the content scrollable or wrappable(wrapple meaning : showing in next line or container)
+
+************for row********
+
+*using Wrap in place of Row.
+*ListView can also be used but ListView inside Listview cannot be used so if            
+                            to use we have to wrap inside a container and adjust height and width.
+____________
+
+body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            ///section 1
+            Column(
+
+              children: [
+                Text('ashkjhk'),
+                Text('ashkjhk'),
+                Text('ashkjhk'),
+                Text('ashkjhk'),
+              ],
+            ),
+
+            ///section 2
+            Container(
+              height: 200,    //width doesnt work
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),
+                  Text('hello'),               
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+
+_________________
+
+---    Container(
+              padding: EdgeInsets.symmetric(horizontal: 40),  //to width to work
+              height: 100,
+              width: 200,
+              child: ListView(
+                shrinkWrap: true,            //this line imp used if listview is inside another listview.
+                scrollDirection: Axis.horizontal,
+               children: [
+                   Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                  Text('hello jee'),
+                ],
+              ),
+            )
+______________________________________________________________
+
+body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            Container(
+              height:300,
+              color:Colors.black,
+              child: Column(
+                children: [
+                  Container(
+                    color: Colors.red,
+                    height: 50,
+                    width: 50,
+                  ),
+                  Container(
+                    color: Colors.greenAccent,
+                    height: 50,
+                    width: 50,
+                  ),
+                  Container(
+                    color: Colors.pinkAccent,
+                    height: 50,
+                    width: 50,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+________________________________________________________________________________________
+
+**In a column movementof elements depend upon 2 factors
+1.MainAxisAlignment=for moving vertical(start,end,center)
+2.crossAxisAlignment=for moving vertical(start,end,center)
+
+child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+----------------------------------------------------------------
+
+mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+               // spacing: 2,
+________________________________________________________________________________________
+
+**for row it works opposite.
+_________________________________________________________________________________________
+
+**Spacer():-it helps to push elements inside a container it is both used in rows and column
+___________________________________________________________________________________________
+
+******SizedBox(height:10) :-it helps to give space height for top down ,width for left-right.
+
+-in column giving height 
+-in row giving width
+other doesnt works.
+_________________________________________________________________________________________
+
+**List view is dynamic, container needs height,so mainaxisalignment doesnt work in them it works only in column.
+-list view doesnt cover full height,it cover height that it only contains same as for container.
+-column takes device full height but for width we have to wrap inside container and give width.,
+_________________________________________________________________________________________________
+
+for example:-
+
+child: Container(
+          width:double.infinity,     //here width is defined.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            // spacing: 2,
+            children: [
+              Container(
+                color: Colors.red,
+                height: 50,
+                width: 50,
+              ),
+              SizedBox(height:10),
+              Container(
+                color: Colors.greenAccent,
+                height: 50,
+                width: 50,
+              ),
+              Container(
+                color: Colors.pinkAccent,
+                height: 50,
+                width: 50,
+              ),
+            ],
+          ),
+        ),
+___________________________________________________________________________________________
+
+***********Expanded widget:-helps to identify device height and divide equally between widgets.
+
+body: Column(
+        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            flex:2,      //it helps to take column height 2 times thaqn others
+            child: Container(
+              color: Colors.red,
+              height: 50,
+              width: 150,
+            ),
+          ),
+         
+          Expanded(
+            child: Container(
+              color: Colors.greenAccent,
+              height: 50,
+              width: 150,
+            ),
+          ),
+
+          Expanded(
+            child: Container(
+              color: Colors.pinkAccent,
+              height: 50,
+              width: 150,
+            ),
+          ),
+        ],
+      ),
+___________________________________________________________________________________
+
+Expanded(
+            flex:2,
+            child: Container(
+              height: 50,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                border: Border.all(color: Colors.black,width: 12,strokeAlign: -5,),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.elliptical(20, 10)),
+              ),
+            ),
+          ),
+_____________________________________________________________________________________
+#assignment.
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'First Exercise',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Expanded and Flexible'),
+        ),
+        body: Column(
+          children: [
+            // First Row: Text Widget
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Color.fromRGBO(100, 47, 108, 1),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Color.fromRGBO(100, 47, 108, 1),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Color.fromRGBO(100, 47, 108, 1),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 60,),
+            // Third Row: Two Containers
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Color.fromRGBO(255, 159, 67, 1),
+                  margin: EdgeInsets.all(5),
+                ),
+                Expanded(
+                  child: Container(
+                    width: 200, // Double the size of the first container
+                    height: 100,
+                    color: Color.fromRGBO(255, 159, 67, 1),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+__________________________________________________________________________________________________
+
+*we can decorate the box
+  Expanded(
+            flex:2,
+            child: Container(
+              height: 50,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                border: Border.all(color: Colors.black,width: 12,strokeAlign: -5,),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.elliptical(20, 10)),
+              ),
+            ),
+          ),
+_____________________________________________________________________________________________________
+#flex:-bhag lagauni height or width.
+#expanded:-takes all remaining height.
+#Flexible:-if there is space it takes if not it gets decreased itself from given value of height.
+body:Column(
+        children: [
+          Container(
+            height:200,
+            color:Colors.pinkAccent,
+          ),
+          Flexible(
+            child: Container(
+              height:50,
+              color:Colors.black,
+            ),
+          ),
+          Container(
+            height:480,                           //this takes constant height.
+            color:Colors.cyanAccent,
+          ),
+        ],
+      ),
+__________________________________________________________________________
+
+Expanded and flexible widget always takes 50-50 of the container
+
+eg;-
+body:Column(
+        children: [
+          Expanded(
+            flex:2,
+            child:Container
+              (
+            color:Colors.red,
+          ),
+          ),
+          Flexible(
+            child:Container
+            (
+            color:Colors.blue,
+              height:200,
+          ),
+          ),
+        ],
+      ),
+____________________________________________________________________________
+
+*FractionallySizedBox is used to take certain % of the container.
+ body:Column(
+        children: [
+          Container(
+            height: 200,
+            width:double.infinity,
+            color:Colors.black,
+            child: FractionallySizedBox(
+              alignment: Alignment.centerLeft,
+              heightFactor:0.5,
+              widthFactor: 0.5,
+              child: Container(
+                color:Colors.pink,
+                child: Text('hello,world',textAlign: TextAlign.center),
+              ),
+            ),
+          ),
+        ],
+      ),
+_______________________________________________________________________________
+
+                            ***
+
+
+
+
+

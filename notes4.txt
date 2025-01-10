@@ -1,0 +1,117 @@
+                                    ***From tabbar****
+_______________________________________________________________________________________________________________________
+
+import 'package:first_app/constants/app_colors.dart';
+import 'package:flutter/cupertino.dart';
+import'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return DefaultTabController(                                      //1st part
+      length: 4,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar:AppBar(
+            leading:Icon(CupertinoIcons.bars),
+            actions:[
+              IconButton(onPressed: (){
+              print('hello jee');
+              }, icon: Icon(Icons.search)),
+              IconButton(onPressed: (){
+                print('hello jee');
+              }, icon: Icon(Icons.notifications)),
+            ],
+            bottom: TabBar(                                            //2nd part
+              indicatorColor: Colors.cyanAccent,
+              unselectedLabelColor:Colors.grey,
+              // labelStyle: TextStyle(color:Colors.red),
+              // indicatorSize:TabBarIndicatorSize.label,
+              // indicatorPadding: EdgeInsets.symmetric(horizontal:25),
+               indicator: BoxDecoration(
+              //   color:Colors.red,
+              //   borderRadius:BorderRadius.circular(50),
+               ),
+
+              tabs:[
+                Tab(
+                    child: Column(
+                      children: [
+                        Text('helloo'),
+                        CircleAvatar(
+                          radius:5,
+                          backgroundColor: Colors.red,
+                        ),
+                      ],
+                    ),
+                ),
+                Tab(text:'Business'),
+                Tab(text:'Design'),
+                Tab(text:'Comic'),
+               ],
+            ),
+          ),
+
+        body: TabBarView(                                     //3rd part
+          //NeverScrollableScrollPhysics():-it stops from scrolling with hand
+          physics:BouncingScrollPhysics(),      //scrolling effect
+          children:[
+            Text('hello jee 1'),
+            Text('hello jee 2'),
+            Text('hello jee 3'),
+            Text('hello jee 4'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+__________________________________________________________________________________________
+
+*using packages which are available
+-you can customize your own tabbar,widgets and many more..
+-package ko code lai install garera tyo code call matra garni ho
+
+*************go to:-pub.dev(you can find packages here)*********
+___________________________________________________________________________________________
+
+*if toshow multiple data with same container using list widget.
+*there are many widgets based on this :- list widget, getview, listviewbuilder,etc
+
+__________________________________________________________________________________________
+
+*if same thing is repeated thenmaking only one.
+right click +refactor + extract method
+
+*if not getting the right format 
+then right click on newly formed method and format with dart
+____________________________________________________________________________________________
+
+        body: TabBarView(
+          //3rd part
+          children: [
+            _buildColumn('hello 1',Icons.ac_unit),
+            _buildColumn('hello 2',Icons.access_alarm),
+            _buildColumn('hello 3',Icons.add_chart_sharp),
+            _buildColumn('hello 4',Icons.account_balance_rounded),
+          ],
+        ),
+        
+      ),
+    );
+  }
+
+  Column _buildColumn(String label,IconData icon) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          color: Colors.red,
+        ),
+        Text(label),
+      ],
+    );
+____________________________________________________________________________
