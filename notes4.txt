@@ -79,7 +79,7 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________
 
 *if toshow multiple data with same container using list widget.
-*there are many widgets based on this :- list widget, getview, listviewbuilder,etc
+*there are many widgets based on this :- list widget, getview, ListView.builder,ListView.separated,etc
 
 __________________________________________________________________________________________
 
@@ -115,3 +115,361 @@ ________________________________________________________________________________
       ],
     );
 ____________________________________________________________________________
+
+**************image show***********
+1.url
+2.file path.
+______________________
+
+1:-
+Column(
+              children: [
+                Image.network('https://images.unsplash.com/photo-1529158062015-cad636e205a0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9va3xlbnwwfHwwfHx8MA%3D%3D',
+                height:200,
+                  width:100,
+                ),
+              ],
+            ),
+------------------------------------------------------------------------------------------------------
+
+2:-
+Image.asset('assets/images/debby-hudson-asviIGR3CPE-unsplash.jpg',
+                  height:200,
+                  width:200,
+                ),
+__________________________________________________________________________________________________
+
+ body: TabBarView(
+
+          children: [
+            Column(
+              children: [
+                SizedBox(height:20,),
+                Container(
+                  padding:EdgeInsets.all(13),
+                  decoration: BoxDecoration(
+                    color:Color(0xFF71877A),
+                    borderRadius: BorderRadius.circular(17),
+                  ),
+                  height:200,
+                  width:150,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(17),
+                    child: Image.asset('assets/images/debby-hudson-asviIGR3CPE-unsplash.jpg',
+                    fit:BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            Text('hello world'),
+            Text('hello world'),
+
+            Column(
+              children: [
+                IconButton(onPressed: (){}, icon:Image.asset('assets/icons/2998137_clover_four_leaf_icon.png'),
+                ),
+              ],
+            ),
+
+          ],
+        ),
+__________________________________________________________________________________________________________
+
+Column(
+              children: [
+                SizedBox(height:20,),
+                Container(
+                  padding:EdgeInsets.all(13),
+                  decoration: BoxDecoration(
+                    color:Color(0xFF71877A),
+                    borderRadius: BorderRadius.circular(17),
+                  ),
+                  height:200,
+                  width:140,
+                  child: Card(
+                    elevation:10,
+                    child: Image.asset('assets/images/debby-hudson-asviIGR3CPE-unsplash.jpg',
+                    fit:BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+____________________________________________________________________________________________________________
+
+**Using ListView to show multiple same items due to which only one designed component is used.
+
+Container(
+                  height: 200,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index){
+                      return SizedBox(width:10,);
+                    },
+                    //shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                      itemBuilder: (context,index){
+                      return Container(
+                        padding:EdgeInsets.all(13),
+                        decoration: BoxDecoration(
+                          color:Color(0xFF71877A),
+                          borderRadius: BorderRadius.circular(17),
+                        ),
+                        height:200,
+                        width:140,
+                        child: Card(
+                          elevation:10,
+                          child: Image.asset('assets/images/debby-hudson-asviIGR3CPE-unsplash.jpg',
+                            fit:BoxFit.cover,
+                          ),
+                        ),
+                      );
+                      },
+                  ),
+                ),
+
+              ],
+            ),
+
+____________________________________________________________________________________________________________
+
+Example of card ui:-
+import 'package:flutter/material.dart';
+
+
+class CardPage extends StatelessWidget {
+  const CardPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              Container(
+                height: 300,
+                child: Card(
+                  color: Colors.black,
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10)
+                        ),
+                        child: Image.network(
+                            'https://upload.wikimedia.org/wikipedia/en/2/2c/Kill_Bill_Volume_1.png',
+                          width: 170,
+                          height: 300,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('KILL BILL VOL 1', style: TextStyle(color: Colors.white),),
+                              Row(
+                                children: [
+                                  Text('2003', style: TextStyle(color: Colors.white, fontSize: 12),),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    child: Text('111 min ', style: TextStyle(color: Colors.white, fontSize: 12),),
+                                  ),
+                                  Text('Action', style: TextStyle(color: Colors.white, fontSize: 12),),
+                                ],
+                              ),
+                              Text('⭐⭐⭐⭐⭐⭐⭐'),
+
+                              Text('The Bride goes to the home of Vernita Green, a former Deadly Viper who now leads a normal suburban life. They engage in a knife fight, which is.....',
+                              style: TextStyle(color: Colors.white, fontSize: 12.5),
+                              ),
+                              Text('Read More', style: TextStyle(color: Colors.amber),),
+                              OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5),
+                                      side: BorderSide(color: Colors.amber)
+                                    ),
+                                    foregroundColor: Colors.amber
+                                  ),
+                                  onPressed: (){}, child: Text('Watch Trailer'))
+                            ],
+
+                          ),
+                        ),
+                      )
+
+                    ],
+                  ),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+      ),
+
+    );
+  }
+}
+_____________________________________________________________________________________________
+
+*revision of row column:-
+import 'package:flutter/material.dart';
+
+class CardPage extends StatelessWidget {
+  const CardPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: SafeArea(
+        child: Container(
+          width: 500,
+          height:500,
+          color:Colors.grey,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.red,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.yellow,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.blue,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+___________________________________________________________________________________________
+
+
+*RichText widget:- It helps to display multiple text in same line. It works like an row.
+
+RichText(
+                    text: TextSpan(
+                      text: 'Pashupati ',
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
+                      children: [
+                        TextSpan(text:'Chaudhary'),    //by doing this we can add multiple text in same line.
+                      ],
+                    ),
+                ),
+___________________________________________________________________
+
+* constructing bbok data and designing model for it:-
+
+///1.Book data:-
+
+import 'package:first_app/models/book.dart';
+
+const books = [
+  {
+    'title': 'To Kill a Mockingbird',
+    'imageUrl': 'https://example.com/to-kill-a-mockingbird.jpg',
+    'author': 'Harper Lee',
+    'rating': '4.8',
+    'pages': 281
+  },
+  {
+    'title': '1984',
+    'imageUrl': 'https://example.com/1984.jpg',
+    'author': 'George Orwell',
+    'rating': '4.7',
+    'pages': 328
+  },
+  {
+    'title': 'The Great Gatsby',
+    'imageUrl': 'https://example.com/the-great-gatsby.jpg',
+    'author': 'F. Scott Fitzgerald',
+    'rating': '4.4',
+    'pages': 180
+  },
+  {
+    'title': 'The Catcher in the Rye',
+    'imageUrl': 'https://example.com/the-catcher-in-the-rye.jpg',
+    'author': 'J.D. Salinger',
+    'rating': '4.2',
+    'pages': 277
+  }
+];
+
+List<Book> bookItems = books.map((book){
+  return Book.fromJson(book);
+}).toList();
+----------------------------------------------------------------------
+
+///2.Book model:-
+
+//list of map lai list of book ma convert garnu paryo ani show garni ui ma.
+
+class Book{
+
+  final String title;
+  final String imageUrl;
+  final String rating;
+  final String author;
+  final int pages;
+
+  Book({
+    required this.imageUrl,
+    required this.author,
+    required this.pages,
+    required this.rating,
+    required this.title
+  });
+
+//over here we have created instance of a book:-
+
+  factory Book.fromJson(Map<String, dynamic> json){
+    return Book(
+        imageUrl: json['imageUrl'],
+        author: json['author'],
+        pages: json['pages'],
+        rating: json['rating'],
+        title:json['title']
+    );
+  }
+
+}
+__________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+**************continued from model:-
+
+____________________________________________________________________________
+*ListTile widget (for making small box like structure like appbar(it is like appbar used in body))
+
+ListTile(
+                  onTap: (){},
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage('https://images.unsplash.com/photo-1521056787327-165dc2a32836?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tzfGVufDB8fDB8fHww'),
+                  ),
+                  title: Text('pashupati'),
+                  subtitle: Text('hello world'),
+                  trailing: IconButton(onPressed: (){}, icon: Icon(Icons.more_vert),),
+                ),
+__________________________________________________________________________________________________________
+
+*Divider widget (gives line)
+
+Divider(
+                    endIndent: 120,
+                    color:Colors.red,
+                  ),
+__________________________________________________________________________________________________________
+
+*Text widget
+
+Text(
+                    'You might like ihdfih ahsdihia sihdiqhih ashdh qhds iqsahihqdsjhjhjh',
+                    style: TextStyle(
+                      height: 2,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      decorationStyle: TextDecorationStyle.solid,
+                      decorationColor: Colors.red,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+_______________________________________________________________________________________________
+
+
+                            **now getting into libraries***(packages)   (pub.dev)
+
+1.Cached_image_network package used.
+______________________________________________________________________________________
+
+* using stack widget.
+
+
+import 'package:flutter/material.dart';
+
+class BookDetails extends StatelessWidget {
+  const BookDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height:200,
+                  width: 200,
+                  color: Colors.red,
+                ),
+
+                Positioned(
+                  bottom: 0,
+                  right:0,
+                  child: Container(
+                    height:100,
+                    width: 100,
+                    color: Colors.black,
+                  ),
+                ),
+
+                Container(
+                  height:50,
+                  width: 50,
+                  color: Colors.lightGreenAccent,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+in stack positioned is uesd to move elements inside main container. main conatiner is constant.
+___________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
