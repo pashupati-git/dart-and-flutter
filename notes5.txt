@@ -92,7 +92,7 @@ class BookDetails extends StatelessWidget {
 in stack positioned is uesd to move elements inside main container. main conatiner is constant.
 ___________________________________________________________________________________________________
 
-Hey till here
+Hey till here here
 
 
 
