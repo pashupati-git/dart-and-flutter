@@ -1,0 +1,158 @@
+git checkout -b new-branch-name
+
+git log --oneline
+git reset --hard HEAD
+git stash
+
+
+
+# Apply stash and remove it from stash list
+git stash pop
+
+
+# See list of all stashes
+git stash list
+
+# Apply stash but keep it in the list (doesn't remove it)
+git stash apply
+
+# Apply a specific stash (if you have multiple)
+git stash apply stash@{0}
+
+# See what's in a stash without applying
+git stash show -p
+
+# Delete a stash without applying
+git stash drop
+
+# Delete all stashes
+git stash clear
+
+____________________________________________________________
+#merge first then delete
+git checkout main
+git merge pashupati_order
+git branch -d pashupati_order
+
+
+
+# Force delete local branch
+git branch -D pashupati_order
+
+# Delete remote branch
+git push origin --delete pashupati_order
+_______________________________________________________________
+
+
+
+#git merge master --allow-unrelated-histories
+
+
+# First, find the commit you want
+git log --oneline
+
+# Reset to that commit (keeps your working files)
+git reset --soft <commit-hash>
+
+# Or reset and discard all changes after that commit
+git reset --hard <commit-hash>
+
+# Push to GitHub (requires force push)
+git push origin main --force
+
+
+____________________________
+git log --oneline
+# Shows:
+# d4e5f6g Latest commit
+# c3d4e5f Middle commit
+# b2c3d4e Old commit  ← You want this one
+# a1b2c3d First commit
+
+git reset --hard b2c3d4e
+git push origin main --force
+
+______________________________________
+
+# See all your past HEAD positions
+git reflog
+
+# Reset to a previous state
+git reset --hard HEAD@{2}
+
+
+_________________________________
+
+#generation command for localization:-
+flutter gen-l10n
+__________________________________________
+
+
+1.responsive flutter
+2.lifecycle of flutter(widget aauni jani)
+3.mvvm architecture
+4.refactor(one things used in many times)
+
+what is life cycle of flutter
+if logic is written in frontend part , how logic is written in backend part
+---------------------------------------------------------------------------------------------
+flutter packages pub run build_runner build --delete-conflicting-outputs
+-------------------------------------------------------
+
+
+ Other Common Uses
+
+Freezed: For immutable classes and unions
+Riverpod: For code generation in state management
+Hive: For database type adapters
+Retrofit: For API client generation
+
+____________________________________________________________________
+
+1.dummy database
+2.grp ko pic
+language translation improve
+google login not working
+my listing page not load
+mail oficial mail
+loading screen is adking
+form fillup ma caching
+otp no should only be once
+
+
+
+__________________________________________
+  qwery , path,body params
+  
+  body response
+  response code
+  body ma list,object,array
+  
+  api ma put,post,get,patch,delete,update,request type, logic, testing
+  
+  http requst, methods,protocols
+  response code-100-500
+  ___________________________________________________________________
+  
+  https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=423f540667a41ace830e9fff03d8d580&units=metric
+  
+  mine;-
+  
+  
+  cashing,refreshing,pagination(show 10 data at a time from total 25 data in one page)-
+  
+  
+  
+  totto,self,riverpod,todo hive,
+  _________________________________________________________________________________
+  
+  expense tracking syaytem
+  features- cacheing,pagination, auto freshing,
+  //one signal for push notification/
+  postgres
+  
+  
+  state management, async notifier provider instared of future provider, notifier provider instead of state n change notifier provider
+  ________________________________________________________________________________________________
+  
+  application optimizaion.

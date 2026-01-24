@@ -62,6 +62,8 @@ void main() {
   // print(personName.trim().length);
   
 }
+
+
 _______________________________________________________________
 
 void main() {
@@ -435,20 +437,6 @@ void main() {
     i++;
     print(i);
   }while(i<20);
-  
-    
-  
-//   while(i< 20){
-//     i++;
-    
-//     if(i % 2 == 0){
-//        print('$i even');
-//     }else{
-//        print('$i odd');
-//     }
-       
-//   }
-  
 }
 _____________________________________________________________
 
@@ -593,32 +581,6 @@ _____________________________________________________________
 
 ***fold, forEach, map, reduce, where, firstWhere fold
 
-void main() {
- 
-  List<int> numbers = [11,22,33,44,55, 66]; 
-//   numbers = [];
- 
-  
-  for(int n in numbers){
-      print(n);
-  }
-  //numbers.add(90);
-//   numbers.addAll([9, 0, 77]);
-  
- // numbers.insert(1, 7);
-  
- // numbers.remove(55);
-  
- // numbers.removeAt(5);
-  
- // print(numbers[0]);
-  
-  //numbers.clear();
-  //print(numbers.isNotEmpty);
-  
-  print(numbers.toSet().toList());
-//   print(numbers.reversed.toList()); 
-}
 __________
 
 
@@ -640,13 +602,12 @@ ________
 
 *map
 void main() {
- final numbers=[11,33,44,55,66,77];
-  final newQ=numbers.map((a[5]){
-    return {
-      if(a==77){
-        a=a+23;
-      }
-    };
+  final numbers = [11, 33, 44, 55, 66, 77];
+  final newQ = numbers.map((a) {
+    if (a == 77) {
+      return a + 23;
+    }
+    return a;
   }).toList();
   print(newQ);
 }
@@ -716,8 +677,8 @@ output=100
 ___________________________________
 
 void main() {
- final numbers=[11,99,9,44];
-  final g=numbers.fold(0,(a,b){ 
+final numbers=[11,99,9,44];
+  final g=numbers.fold(0,(a,b){
     print(a);
     return a+b;
   });
@@ -959,7 +920,7 @@ void main() {
   
   print(restaurants[0]['ratings']); 
 }
-__________________________________________________-
+__________________________________________________
 
 void main() {
   

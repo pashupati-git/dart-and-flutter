@@ -1,3 +1,57 @@
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
 flutter run
+
+
+flutter pub run build_runner build --delete-conflicting-outputs
+
+
+
+#Pull latest changes if they updated it:
+bash:git checkout roman
+git pull  # Gets the latest changes from origin/roman
+
+
+
+
+Option 1: Commit Your Changes (Recommended)
+bash# Save your work permanently
+git add .
+git commit -m "Work in progress on pashupati_order"
+git checkout roman
+
+Option 2: Stash Your Changes (Temporary Save)
+bash# Temporarily save your changes
+git stash
+git checkout roman
+
+# When you come back to your branch, restore your changes:
+git checkout pashupati_order
+git stash pop
+________________________________________________________________________
+
+#when locally branch is showing but remotely it is not showing then use this to show in github
+git push -u origin your-branch-name
+-----------------------------------------------------------------------------
+# First, check your current status
+git status
+
+# Reset the index to match HEAD
+git reset --mixed HEAD
+
+# Now try to checkout main
+git checkout main
+
+# Remove the untracked file first
+rm lib/main.dart~
+
+# Stash your changes
+git stash
+
+# Checkout main
+git checkout main
+
+# Later, if you want your changes back on expense_tracker:
+# git checkout expense_tracker
+# git stash pop
+__________________________________________________________________________________-

@@ -1,0 +1,54 @@
+
+
+widgets                             
+________________________________________________________________________________
+#combination of sized box and elevated button.
+     SizedBox(
+          width: 250,               //if width n height same it appears circular
+          height: 50,
+          child: ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+          },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.grey,
+                foregroundColor: Colors.black,
+                textStyle:TextStyle(fontSize: 20)
+              ),
+              child:Text('login'))
+        ),
+		
+______________________________________________________________________________
+//permission
+
+1.
+dependencies:
+  flutter:
+    sdk: flutter
+  permission_handler: ^11.0.1
+  
+2. 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- For Android 12 and below -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <!-- For Android 13+ (Tiramisu) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    
+    <application ...>
+        ...
+    </application>
+</manifest>
+____________________________________________________________________________
+
+# Install the package
+dart pub global activate rename
+
+# Change app name
+dart pub global run rename setAppName --value "MyAwesomeApp"
+
+# Change bundle identifier (package name)
+dart pub global run rename setBundleId --value "com.mycompany.myawesomeapp"
+_____________________________________________________________________________
